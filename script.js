@@ -8,9 +8,27 @@ const relatorios = [
     descricao: "Análise dos indicadores de produtividade do setor de suporte do siat.",
   },
   {
-    nome: "Suporte do Siat",
+    nome: "Relatório do Projeto",
     url: "https://app.powerbi.com/view?r=eyJrIjoiNTkxYWNkOWUtYmQyZC00ZjJmLWE4YjYtMWQ4YzViN2U2ZDNjIiwidCI6IjlmYjUxODkzLTdhM2UtNGM4NC05OGQ3LWY5ZWVmNTgwNWU3ZCJ9",
-    categoria: "gerenciaadministrativa",
+    categoria: "analiseprojeto",
+    descricao: "Análise dos indicadores de produtividade do setor de suporte do siat.",
+  },
+  {
+    nome: "Relatório da Gerência de Vistoria",
+    url: "https://app.powerbi.com/view?r=eyJrIjoiNTkxYWNkOWUtYmQyZC00ZjJmLWE4YjYtMWQ4YzViN2U2ZDNjIiwidCI6IjlmYjUxODkzLTdhM2UtNGM4NC05OGQ3LWY5ZWVmNTgwNWU3ZCJ9",
+    categoria: "gerenciavistoria",
+    descricao: "Análise dos indicadores de produtividade do setor de suporte do siat.",
+  },
+  {
+    nome: "Relatório da Normas e Cadastros",
+    url: "https://app.powerbi.com/view?r=eyJrIjoiNTkxYWNkOWUtYmQyZC00ZjJmLWE4YjYtMWQ4YzViN2U2ZDNjIiwidCI6IjlmYjUxODkzLTdhM2UtNGM4NC05OGQ3LWY5ZWVmNTgwNWU3ZCJ9",
+    categoria: "normascadastro",
+    descricao: "Análise dos indicadores de produtividade do setor de suporte do siat.",
+  },
+  {
+    nome: "Relatório da Perícia de Incêndio",
+    url: "https://app.powerbi.com/view?r=eyJrIjoiNTkxYWNkOWUtYmQyZC00ZjJmLWE4YjYtMWQ4YzViN2U2ZDNjIiwidCI6IjlmYjUxODkzLTdhM2UtNGM4NC05OGQ3LWY5ZWVmNTgwNWU3ZCJ9",
+    categoria: "periciaincendio",
     descricao: "Análise dos indicadores de produtividade do setor de suporte do siat.",
   },
   
@@ -62,9 +80,10 @@ function filtrarRelatorios() {
 
 function formatarCategoria(categoria) {
   const categoriasFormatadas = {
-    vendas: "Vendas",
-    financeiro: "Financeiro",
-    desempenho: "Desempenho",
+    periciaincendio: "Perícia de Incêndio",
+    analiseprojeto: "Análise de Projetos",
+    normascadastro: "Normas e Cadastros",
+    gerenciavistoria: "Gerência de Vistoria",
     gerenciaadministrativa: "Gerencia Administrativa",
   };
 
