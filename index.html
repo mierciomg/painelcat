@@ -7,29 +7,19 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
- <header>
-  <div class="header-content">
-    <img src="logo_cbmes.png" alt="Logo Esquerda" class="logo" />
-    <div class="titulo-container">
-      <h1>Centro de Atividades Técnicas</h1>
-      <h2>Plataforma de Indicadores e Desempenho</h2>
+  <header>
+    <div class="header-content">
+      <img src="logo_cbmes.png" alt="Logo Esquerda" class="logo" />
+      <div class="titulo-container">
+        <h1>Centro de Atividades Técnicas</h1>
+        <h2>Plataforma de Indicadores e Desempenho</h2>
+      </div>
+      <img src="logo_cbmes.png" alt="Logo Direita" class="logo" />
     </div>
-    <img src="logo_cbmes.png" alt="Logo Direita" class="logo" />
-  </div>
-</header>
-
-
-
+  </header>
 
   <main>
-    <div id="loginDiv">
-      <p>Digite a senha para acessar os relatórios:</p>
-      <input type="password" id="senha" placeholder="Senha de acesso" />
-      <button onclick="autenticar()">Entrar</button>
-      <p id="erroSenha" style="color:red;"></p>
-    </div>
-
-    <div id="conteudo" class="hidden">
+    <div id="conteudo">
       <label for="categoriaSelect"><strong>Setor do Centro de Atividades Técnicas:</strong></label>
       <select id="categoriaSelect" onchange="filtrarRelatorios()">
         <option value="">-- Todos os Setores --</option>
@@ -38,7 +28,6 @@
         <option value="gerenciavistoria">Gerência de Vistoria</option>
         <option value="normascadastro">Normas e Cadastros</option>
         <option value="periciaincendio">Perícia de Incêndio</option>
-        
       </select>
 
       <input

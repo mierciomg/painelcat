@@ -1,115 +1,114 @@
-const senhaCorreta = "1234";
-
 const relatorios = [
-  {
-    nome: "Suporte do Siat",
-    url: "https://app.powerbi.com/view?r=eyJrIjoiNTkxYWNkOWUtYmQyZC00ZjJmLWE4YjYtMWQ4YzViN2U2ZDNjIiwidCI6IjlmYjUxODkzLTdhM2UtNGM4NC05OGQ3LWY5ZWVmNTgwNWU3ZCJ9",
-    categoria: "gerenciaadministrativa",
-    descricao: "Análise dos indicadores de produtividade do setor de suporte do siat.",
+    {
+    nome: "Indicadores Suporte Siat",
+    descricao: "Indicadores de produtividade do setor de suporte do siat.",
+    setor: "gerenciaadministrativa",
+    setor_nome: "Gerência Administrativa",
+    url: "https://app.powerbi.com/view?r=eyJrIjoiNTkxYWNkOWUtYmQyZC00ZjJmLWE4YjYtMWQ4YzViN2U2ZDNjIiwidCI6IjlmYjUxODkzLTdhM2UtNGM4NC05OGQ3LWY5ZWVmNTgwNWU3ZCJ9"
   },
   {
-    nome: "Relatório do Projeto",
-    url: "https://app.powerbi.com/view?r=eyJrIjoiNTkxYWNkOWUtYmQyZC00ZjJmLWE4YjYtMWQ4YzViN2U2ZDNjIiwidCI6IjlmYjUxODkzLTdhM2UtNGM4NC05OGQ3LWY5ZWVmNTgwNWU3ZCJ9",
-    categoria: "analiseprojeto",
-    descricao: "Análise dos indicadores de produtividade do setor de suporte do siat.",
+    nome: "Relatório de Projetos 2025",
+    descricao: "Análise dos projetos recebidos no primeiro semestre.",
+    setor: "analiseprojeto",
+    setor_nome: "Análise de Projetos",
+    url: "relatorios/projetos2025.html"
   },
   {
-    nome: "Relatório da Gerência de Vistoria",
-    url: "https://app.powerbi.com/view?r=eyJrIjoiNTkxYWNkOWUtYmQyZC00ZjJmLWE4YjYtMWQ4YzViN2U2ZDNjIiwidCI6IjlmYjUxODkzLTdhM2UtNGM4NC05OGQ3LWY5ZWVmNTgwNWU3ZCJ9",
-    categoria: "gerenciavistoria",
-    descricao: "Análise dos indicadores de produtividade do setor de suporte do siat.",
+    nome: "Relatório de Projetos 2025",
+    descricao: "Análise dos projetos recebidos no primeiro semestre.",
+    setor: "analiseprojeto",
+    setor_nome: "Análise de Projetos",
+    url: "relatorios/projetos2025.html"
   },
   {
-    nome: "Relatório da Normas e Cadastros",
-    url: "https://app.powerbi.com/view?r=eyJrIjoiNTkxYWNkOWUtYmQyZC00ZjJmLWE4YjYtMWQ4YzViN2U2ZDNjIiwidCI6IjlmYjUxODkzLTdhM2UtNGM4NC05OGQ3LWY5ZWVmNTgwNWU3ZCJ9",
-    categoria: "normascadastro",
-    descricao: "Análise dos indicadores de produtividade do setor de suporte do siat.",
+    nome: "Vistorias Janeiro",
+    descricao: "Relatório de vistorias realizadas em janeiro.",
+    setor: "gerenciavistoria",
+    setor_nome: "Gerência de Vistoria",
+    url: "relatorios/vistorias_jan.html"
   },
   {
-    nome: "Relatório da Perícia de Incêndio",
-    url: "https://app.powerbi.com/view?r=eyJrIjoiNTkxYWNkOWUtYmQyZC00ZjJmLWE4YjYtMWQ4YzViN2U2ZDNjIiwidCI6IjlmYjUxODkzLTdhM2UtNGM4NC05OGQ3LWY5ZWVmNTgwNWU3ZCJ9",
-    categoria: "periciaincendio",
-    descricao: "Análise dos indicadores de produtividade do setor de suporte do siat.",
+    nome: "Cadastro Normas",
+    descricao: "Listagem e atualizações de normas técnicas.",
+    setor: "normascadastro",
+    setor_nome: "Normas e Cadastros",
+    url: "relatorios/normas.html"
   },
-  
+  {
+    nome: "Perícia Q1",
+    descricao: "Indicadores de perícias realizadas no 1º trimestre.",
+    setor: "periciaincendio",
+    setor_nome: "Perícia de Incêndio",
+    url: "relatorios/pericia_q1.html"
+  }
 ];
 
-function autenticar() {
-  const senha = document.getElementById("senha").value;
-  const erro = document.getElementById("erroSenha");
-  if (senha === senhaCorreta) {
-    document.getElementById("loginDiv").classList.add("hidden");
-    document.getElementById("conteudo").classList.remove("hidden");
-    filtrarRelatorios();
-  } else {
-    erro.textContent = "Senha incorreta. Tente novamente.";
+function renderizarRelatorios(filtrados) {
+  const container = document.getElementById("cards");
+  container.innerHTML = "";
+
+  const iconesPorSetor = {
+    analiseprojeto: "📐",
+    gerenciaadministrativa: "📊",
+    gerenciavistoria: "📝",
+    normascadastro: "📚",
+    periciaincendio: "🔥"
+  };
+
+  if (filtrados.length === 0) {
+    container.innerHTML = "<p>Nenhum relatório encontrado.</p>";
+    return;
   }
+
+  filtrados.forEach((relatorio) => {
+    const card = document.createElement("div");
+    card.className = `card ${relatorio.setor}`;
+    const icone = iconesPorSetor[relatorio.setor] || "📄";
+
+    card.innerHTML = `
+      <h3><span class="card-icon">${icone}</span> ${relatorio.nome}</h3>
+      <p><strong>Descrição:</strong> ${relatorio.descricao}</p>
+      <p><strong>Setor:</strong> ${relatorio.setor_nome}</p>
+      <button onclick="abrirRelatorio('${relatorio.url}')">Visualizar</button>
+    `;
+    container.appendChild(card);
+  });
 }
 
 function filtrarRelatorios() {
-  const categoria = document
-    .getElementById("categoriaSelect")
-    .value.toLowerCase();
+  const categoria = document.getElementById("categoriaSelect").value.toLowerCase();
   const busca = document.getElementById("buscaInput").value.toLowerCase();
-  const cardsDiv = document.getElementById("cards");
-  cardsDiv.innerHTML = "";
 
   const filtrados = relatorios.filter((r) => {
     return (
-      (!categoria || r.categoria === categoria) &&
-      (!busca || r.nome.toLowerCase().includes(busca))
+      (categoria === "" || r.setor === categoria) &&
+      r.nome.toLowerCase().includes(busca)
     );
   });
 
-  if (filtrados.length === 0) {
-    cardsDiv.innerHTML = "<p>Nenhum relatório encontrado.</p>";
-  }
-
-  filtrados.forEach((rel) => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <h4>${rel.nome}</h4>
-      <p><strong>Descrição:</strong> ${rel.descricao}</p>
-      <p class="categoria-tag">${formatarCategoria(rel.categoria)}</p>
-    `;
-    card.onclick = () => mostrarRelatorio(rel.url);
-    cardsDiv.appendChild(card);
-  });
+  renderizarRelatorios(filtrados);
 }
 
-function formatarCategoria(categoria) {
-  const categoriasFormatadas = {
-    periciaincendio: "Perícia de Incêndio",
-    analiseprojeto: "Análise de Projetos",
-    normascadastro: "Normas e Cadastros",
-    gerenciavistoria: "Gerência de Vistoria",
-    gerenciaadministrativa: "Gerencia Administrativa",
-  };
-
-  return categoriasFormatadas[categoria] || categoria.charAt(0).toUpperCase() + categoria.slice(1);
-}
-
-function mostrarRelatorio(url) {
-  if (!url.startsWith("https://app.powerbi.com/")) {
-    alert("URL inválida para visualização.");
-    return;
-  }
-  document.getElementById("conteudo").classList.add("hidden");
-  const relatorioView = document.getElementById("relatorioView");
+function abrirRelatorio(url) {
+  document.getElementById("conteudo").style.display = "none";
+  document.getElementById("relatorioView").style.display = "block";
   document.getElementById("relatorioIframe").src = url;
-  relatorioView.style.display = "flex";
+  document.querySelector("footer").style.display = "none";
 }
 
 function voltarParaLista() {
   document.getElementById("relatorioView").style.display = "none";
   document.getElementById("relatorioIframe").src = "";
-  document.getElementById("conteudo").classList.remove("hidden");
+  document.getElementById("conteudo").style.display = "block";
+  document.querySelector("footer").style.display = "block";
 }
 
-function atualizaDataHora() {
-  const dataHora = new Date().toLocaleString("pt-BR");
-  document.getElementById("dataHora").textContent = dataHora;
+function atualizarDataHora() {
+  const agora = new Date();
+  document.getElementById("dataHora").textContent = agora.toLocaleString("pt-BR");
 }
-atualizaDataHora();
-setInterval(atualizaDataHora, 1000);
+
+window.onload = () => {
+  atualizarDataHora();
+  renderizarRelatorios(relatorios);
+};
