@@ -108,6 +108,10 @@ function atualizarDataHora() {
   document.getElementById("dataHora").textContent = agora.toLocaleString("pt-BR");
 }
 
+// Atualiza a cada segundo
+setInterval(atualizarDataHora, 1000);
+
+
 window.onload = () => {
   atualizarDataHora();
   renderizarRelatorios(relatorios);
