@@ -13,7 +13,7 @@ const relatorios = [
     descricao: "Relatório do tempo médio para emissão dos alvarás.",
     setor: "gerenciavistoria",
     setor_nome: "Gerência de Vistoria",
-    url: "https://app.powerbi.com/view?r=eyJrIjoiYzIyZmVjMTMtNWU0OC00NGRiLTliNWItNDZjZjdjYzQ5OTZhIiwidCI6IjlmYjUxODkzLTdhM2UtNGM4NC05OGQ3LWY5ZWVmNTgwNWU3ZCJ9"
+    url: "https://app.powerbi.com/view?r=eyJrIjoiYzIyZmVjMTMtNWU0OC00NGRiLTliNWItNDZjZjdjYzQ5OTZhIiwidCI6IjlmYjUxODkzLTdhM2UtNGM4NC05OGQ3LWY5ZWVmNTgwNWU3ZCJ9&pageName=92e90e3e9006b93b03e7"
   },
   
 ];
