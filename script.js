@@ -6,41 +6,16 @@ const relatorios = [
     setor_nome: "Gerência Administrativa",
     url: "https://app.powerbi.com/view?r=eyJrIjoiNTkxYWNkOWUtYmQyZC00ZjJmLWE4YjYtMWQ4YzViN2U2ZDNjIiwidCI6IjlmYjUxODkzLTdhM2UtNGM4NC05OGQ3LWY5ZWVmNTgwNWU3ZCJ9"
   },
+  
+
   {
-    nome: "Relatório de Projetos 2025",
-    descricao: "Análise dos projetos recebidos no primeiro semestre.",
-    setor: "analiseprojeto",
-    setor_nome: "Análise de Projetos",
-    url: "relatorios/projetos2025.html"
-  },
-  {
-    nome: "Relatório de Projetos 2025",
-    descricao: "Análise dos projetos recebidos no primeiro semestre.",
-    setor: "analiseprojeto",
-    setor_nome: "Análise de Projetos",
-    url: "relatorios/projetos2025.html"
-  },
-  {
-    nome: "Vistorias Janeiro",
-    descricao: "Relatório de vistorias realizadas em janeiro.",
+    nome: "Tempo de Emissão Alvarás",
+    descricao: "Relatório do tempo médio para emissão dos alvarás.",
     setor: "gerenciavistoria",
     setor_nome: "Gerência de Vistoria",
-    url: "relatorios/vistorias_jan.html"
+    url: "https://app.powerbi.com/view?r=eyJrIjoiYzIyZmVjMTMtNWU0OC00NGRiLTliNWItNDZjZjdjYzQ5OTZhIiwidCI6IjlmYjUxODkzLTdhM2UtNGM4NC05OGQ3LWY5ZWVmNTgwNWU3ZCJ9"
   },
-  {
-    nome: "Cadastro Normas",
-    descricao: "Listagem e atualizações de normas técnicas.",
-    setor: "normascadastro",
-    setor_nome: "Normas e Cadastros",
-    url: "relatorios/normas.html"
-  },
-  {
-    nome: "Perícia Q1",
-    descricao: "Indicadores de perícias realizadas no 1º trimestre.",
-    setor: "periciaincendio",
-    setor_nome: "Perícia de Incêndio",
-    url: "relatorios/pericia_q1.html"
-  }
+  
 ];
 
 function renderizarRelatorios(filtrados) {
