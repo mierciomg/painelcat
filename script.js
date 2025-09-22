@@ -23,6 +23,14 @@ const relatorios = [
     setor_nome: "Gerência de Vistoria",
     url: "https://app.powerbi.com/view?r=eyJrIjoiZDZhYjFiMzMtYmQ5Ny00YjhmLWI1YWItODMzOTc3MWVjZTg4IiwidCI6IjlmYjUxODkzLTdhM2UtNGM4NC05OGQ3LWY5ZWVmNTgwNWU3ZCJ9"
   },
+
+  {
+    nome: "Produtividade dos Vistoriadores",
+    descricao: "Relatório contendo dados da produtividade dos vistoriadores e indicadores de eficiência",
+    setor: "gerenciavistoria",
+    setor_nome: "Gerência de Vistoria",
+    url: "https://app.powerbi.com/view?r=eyJrIjoiYWQyNjM0NzAtM2E0Mi00YzVhLWE3NmItMjU2YzRmOTRiZTk4IiwidCI6IjlmYjUxODkzLTdhM2UtNGM4NC05OGQ3LWY5ZWVmNTgwNWU3ZCJ9"
+  },
   
 ];
 
